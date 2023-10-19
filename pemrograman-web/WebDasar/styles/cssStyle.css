@@ -1,0 +1,103 @@
+/* Type Selector -> nama elemen sbg target */
+span {
+  color: red;
+}
+
+/* Class Selector */
+.red {
+  color: red;
+}
+
+.skyblue-bg {
+  background-color: skyblue;
+}
+
+.fancy {
+  font-weight: bold;
+  text-shadow: 4px 4px 3px #77f;
+}
+
+/* ID Selector */
+#special {
+  background-color: skyblue;
+}
+
+/* Attribute Selector => Menetapkan target elemen brdasarkan atribut yang digunakan */
+a[href] {
+  color: blue;
+}
+
+/* <a> element yang menerapkan nilai pada href dengan awalan "#" */
+a[href^="#"] {
+  background-color: gold;
+}
+
+/* <a> element yang menerapkan nilai pada href yang mengandung teks "example" */
+a[href*="example"] {
+  background-color: silver;
+}
+
+/* <a> element yang menerapkan nilai pada href yang mengandung teks "insensitive" tidak mementingkan huruf kapital*/
+a[href*="insensitive" i] {
+  color: cyan;
+}
+
+/* <a> element yang menerapkan nilai pada href dengan akhiran ".org" */
+a[href$=".org"] {
+  color: red;
+}
+
+/* Universal Selector */
+/* Menargetkan seluruh tipe elemen */
+* {
+  color: green;
+}
+
+/* Menargetkan seluruh tipe elemen yang mengandung nilai "en" pada atribut lang */
+*[lang^="en"] {
+  font-style: italic;
+}
+
+/* Menargetkan seluruh tipe elemen yang memiliki nilai "warning" pada atribut class */
+*.warning {
+  color: red;
+}
+
+/* Menargetkan seluruh tipe elemen yang memiliki nilai "content" pada atribut id */
+*#content {
+  border: 1px solid blue;
+  padding: 20px;
+}
+
+/* Descendant Selector (Space) -> elemen yang turunannya tidak langsung, basic selector pertama dituliskan sebagai induk */
+div p {
+  background-color: yellow;
+}
+
+/* Pseudo-Class Selector */
+/* rule akan diterapkan pada sebuah tautan yang belum pernah dikunjungi */
+a:link {
+  color: red;
+}
+
+/* rule akan diterapkan pada sebuah tautan yang sudah pernah dikunjungi */
+a:visited {
+  color: green;
+}
+
+/* rule akan diterapkan pada sebuah tautan ketika diarahkan dengan kursor */
+a:hover {
+  color: pink;
+}
+
+/* rule akan diterapkan pada sebuah tautan ketika ditekan */
+a:active {
+  color: orange;
+}
+
+/* Pseudo-Elemen Selector */
+p::first-letter {
+  font-size: 32px;
+  font-weight: bold;
+  color: saddlebrown;
+}

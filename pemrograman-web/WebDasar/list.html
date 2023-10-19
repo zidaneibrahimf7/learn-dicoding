@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List</title>
+    <link rel="stylesheet" href="/WebDasar/styles/cssStyle.css"
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>
+        Item 3
+        <ol>
+          <li>List item 3.1</li>
+          <li>List item 3.2</li>
+          <li>List item 3.3</li>
+        </ol>
+      </li>
+      <li>Item 4</li>
+    </ul>
+    <ul>
+      <li><h1>Sebuah Heading sebagai item list</h1></li>
+      <li><h2>Sebuah Heading level 2 sebagai item list</h2></li>
+      <li><p>Sebuah paragraf sebagai item list</p></li>
+    </ul>
+
+    <ol type="I">
+      <li>Langkah pertama</li>
+      <li>Langkah kedua</li>
+      <li>Langkah ketiga</li>
+      <li>Langkah selanjutnya</li>
+    </ol>
+
+    <ol type="A">
+      <li>Langkah pertama</li>
+      <li>Langkah kedua</li>
+      <li>Langkah ketiga</li>
+      <li>Langkah selanjutnya</li>
+    </ol>
+
+    <ol start="7">
+      <li>Langkah ketujuh</li>
+      <li>Langkah kedelapan</li>
+      <li>Langkah kesembilan</li>
+      <li>Langkah selanjutnya</li>
+    </ol>
+
+    <ol start="7" reversed>
+      <li>Langkah ketujuh</li>
+      <li>Langkah kedelapan</li>
+      <li>Langkah kesembilan</li>
+      <li>Langkah selanjutnya</li>
+    </ol>
+
+    <!-- CSS -->
+    <span>
+      Ini merupakan sebuah teks yang berada pada elemen span. Seharusnya elemen
+      ini ditampilkan dengan warna teks merah.
+    </span>
+    <p>
+      Ini merupakan sebuah teks yang berada pada elemen paragraf, teks ini tidak
+      seharusnya tidak akan terpengaruh oleh rule.
+    </p>
+    <span>
+      Ini merupakan sebuah teks yang berada pada elemen span lainnya. Seharusnya
+      elemen ini ditampilkan dengan warna teks merah juga.
+    </span>
+
+    <p class="red">Paragraf dengan teks berwarna merah</p>
+    <p class="skyblue-bg">Paragraf dengan background berwarna biru langit</p>
+    <p class="fancy">Paragraf dengan gaya fancy</p>
+    <p>
+      Paragraf yang menampilkan teks dengan warna standar tanpa menerapkan
+      styling
+    </p>
+    <!-- ID Selector -->
+    <div id="special">
+      <p>Ini merupakan konten di dalam sebuah div yang diberi id special.</p>
+    </div>
+    <div>
+      <p>Ini merupakan konten di dalam sebuah div biasa.</p>
+    </div>
+
+    <!-- Attribute Selector -->
+    <ul>
+      <ul>
+        <li><a href="#internal">Internal link</a></li>
+        <li><a href="http://example.com">Example link</a></li>
+        <li><a href="#InSensitive">Insensitive internal link</a></li>
+        <li><a href="http://example.org">Example org link</a></li>
+      </ul>
+    </ul>
+
+    <!-- Universal Selector -->
+    <p>
+      Ini merupakan paragraf biasa atau tidak menerapkan atribut apapun. Maka
+      teks pada paragraf ini akan berwarna hijau
+    </p>
+    <p lang="en-us">
+      This is an English paragraph contains en-us value of lang attribute, so
+      this text will be green and italic.
+    </p>
+
+    <h1>Ini merupakan sebuah header biasa</h1>
+    <h1 lang="en-us">This is an English Header</h1>
+
+    <p class="warning">
+      Perhatikan paragraf ini! Paragraf ini merupakan paragraf yang memiliki
+      kelas bernilai warning, sehingga teks dari paragraf ini akan berwarna
+      merah
+    </p>
+
+    <div id="content">
+      <p>
+        Ini merupakan sebuah teks di dalam sebuah div yang memiliki id bernilai
+        "content", seharusnya paragraf ini dibungkus dalam border yang memiliki
+        padding 20px
+      </p>
+    </div>
+
+    <!-- Descendant Selector (space) -->
+    <div>
+      <p>Paragraf pertama. di dalam div.</p>
+      <p>Paragraf kedua. di dalam div.</p>
+      <section>
+        <p>
+          Paragraf ketiga. di dalam div Namun, bukan sebagai anak elemen secara
+          langsung.
+        </p>
+      </section>
+      <p>Paragraf keempat. di dalam div.</p>
+    </div>
+    <p>Paragraf kelima. di luar div.</p>
+    <p>Paragraf keenam. di luar div.</p>
+
+    <a href="https://www.google.com/">Kunjungi Halaman Google</a>
+  </body>
+</html>

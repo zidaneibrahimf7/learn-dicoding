@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&family=Outfit:wght@100;300;400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-color: #001524;
+  color: #D6CC99;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header.navbar-container {
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 3.5rem;
+}
+
+header.navbar-container .logo img {
+  width: 78px;
+}
+
+header.navbar-container .navbar-list ul {
+  padding-left: 0;
+  display: flex;
+  gap: 2rem 1rem;
+}
+
+header.navbar-container .navbar-list li {
+  list-style-type: none;
+}
+
+header.navbar-container .navbar-list li a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 700;
+  color: #D6CC99;
+  word-wrap: break-word;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition all .2s ease-in-out;
+}
+
+header.navbar-container .navbar-list li:hover a {
+  background-color: #445D48;
+  color: #D6CC99;
+}
+
+/* End of Header and Navbar */
+
+main {
+  max-width: 2500px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 2rem 4rem;
+  flex: 1;
+}
+
+main .home {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+main .home .home-description {
+  flex: 1 1;
+}
+
+main .home .home-description .title {
+  font-size: 1.5rem;
+  margin-block: 1rem;
+}
+
+main .home .home-description .title-job {
+  font-size: 3.5rem;
+  margin-block: 1rem;
+  max-width: 968px;
+}
+
+main .home .home-description p {
+  line-height: 1.7rem;
+  font-size: 1.2rem;
+  text-align: justify;
+  max-width: 968px;
+}
+
+main .home .home-description .tools .tools-title {
+  font-size: 2.5rem;
+  margin-block: 1rem;
+}
+
+main .home .home-description .tools .job-image {
+  width: 177px;
+  min-width: 77px;
+  min-height: 77px;
+  height: 177px;
+  display: flex;
+}
+
+main .home .home-description .link-home {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+}
+
+main .home .home-description .link-home button {
+  padding: .8rem 2.5rem;
+  margin-top: .95rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #D6CC99;
+
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-color: #445D48;
+  cursor: pointer;
+  transition: all .15s ease-in;
+}
+
+main .home .home-description .link-home button:hover {
+  border: 3px solid;
+  color: #E1AA74;
+  background-color: transparent;
+}
+
+main .home aside img {
+  margin: auto;
+  width: 433px;
+  height: 573px;
+  margin-right: .6rem;
+}
+
+
+/* Project 1 */
+
+
+main .project {
+  display: flex;
+  flex: 1;
+}
+
+main .project .project-description {
+  flex: 1 1;
+}
+
+main .project .project-description .title {
+  font-size: 3.5rem;
+  margin-block: 1rem;
+  padding-top: 2.5rem;
+}
+
+main .project .project-description .title-project {
+  font-size: 2.5rem;
+  margin-block: 1rem;
+  max-width: 968px;
+}
+
+main .project .project-description p {
+  line-height: 1.7rem;
+  font-size: 1.2rem;
+  text-align: justify;
+
+}
+
+main .project .project-description .tools-project .tools-title {
+  font-size: 1.95rem;
+  margin-bottom: 1rem;
+  margin-block: 1rem;
+}
+
+main .project .project-description .tools-project .tools-image {
+  width: 97px;
+  min-width: 77px;
+  min-height: 77px;
+  height: 97px;
+  display: flex;
+  gap: 1.05rem;
+}
+
+main .project aside img {
+  margin: auto;
+  width: 433px;
+  height: 573px;
+  margin-left: 168px;
+  display: flex;
+  flex: 1;
+}
+
+main .project .project-image-2 img {
+  margin: auto;
+  width: 433px;
+  height: 573px;
+  margin-right: 168px;
+  display: flex;
+  flex: 1;
+}
+
+/* Project-2 */
+
+main .project .project-description-2 {
+  flex: 1 1;
+}
+
+main .project .project-description-2 .title {
+  font-size: 3.5rem;
+  margin-block: 1rem;
+  padding-top: 2.5rem;
+}
+
+main .project .project-description-2 .title-project-2 {
+  font-size: 2.5rem;
+  margin-block: 1rem;
+  max-width: 968px;
+}
+main .project .project-description-2 .tools-project .tools-title {
+  font-size: 1.95rem;
+  margin-bottom: 1rem;
+  margin-block: 1rem;
+}
+
+main .project .project-description-2 .tools-project .tools-image {
+  width: 97px;
+  min-width: 77px;
+  min-height: 77px;
+  height: 97px;
+  display: flex;
+  gap: 1.05rem;
+}
+
+main .project .project-description-2 p {
+  line-height: 1.7rem;
+  font-size: 1.2rem;
+  text-align: justify;
+
+}
+
+/* Contact */
+main .contact {
+  inset-block: 0;
+  inset-inline-end: 0;
+}
+
+main .contact .mycontact {
+  height: 100%;
+  /* display: flex; */
+}
+
+main .contact .mycontact .contact-text {
+  font-size: 3.6rem;
+}
+
+
+main .contact .mycontact .contact-list-social-media ul {
+  margin: auto;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
+}
+
+ main .contact .mycontact .contact-list-social-media li {
+  list-style-type: none;
+  font-size: 1.55rem;
+}
+
+main .contact .mycontact .contact-list-social-media a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #D6CC99;
+  transition: all .ls ease-in-out;
+}
+
+main .contact .mycontact .contact-list-social-media li a:hover {
+  color: #D6CC99;
+  background-color: #445D48;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+main .contact .mycontact .contact-list-social-media i {
+  margin-right: .5rem;
+}
+
+/* Footer */
+
+footer {
+  padding: 1.05rem;
+  margin: auto;
+}
+
+footer .footer-text {
+  font-size: .95rem;
+
+}
+
+
+
+/* Media query for screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    header.navbar-container {
+        padding-top: 2rem; 
+    }
+
+    header.navbar-container .logo img {
+        width: 50px;
+    }
+
+    header.navbar-container .navbar-list ul {
+        gap: 1rem;
+    }
+
+    header.navbar-container .navbar-list li a {
+        font-size: 18px; 
+        padding: 0.4rem 0.8rem;
+    }
+
+    main {
+        padding: 1rem 2rem; 
+    }
+
+    main .home .home-description .title {
+        font-size: 1.2rem; 
+    }
+
+    main .home .home-description .title-job {
+        font-size: 2.5rem; 
+    }
+
+    main .home .home-description p {
+        font-size: 1rem;
+    }
+
+    main .home aside img {
+        width: 250px;
+        height: 330px; 
+        margin-right: 1rem;
+    }
+  }

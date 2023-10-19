@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positioning</title>
+    <link rel="stylesheet" href="./styles/positioning.css" />
+  </head>
+  <body>
+    <!--  Relative Positioning -> dapat melakukan perpindahan posisi elemen ke atas, kanan, bawah atau kiri tanpa mempengaruhi pepindahan posisi elemen di sekitarnya -->
+    <h1>Relative Positioning</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+      iusto non optio vel voluptas? Assumenda blanditiis consequatur doloribus
+      porro quasi similique vero voluptatibus. Adipisci, tenetur.
+    </p>
+    <p class="relative">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+      commodi consectetur dolore eligendi, esse fuga hic laboriosam nobis
+      nostrum, nulla omnis optio pariatur repellendus reprehenderit saepe, sit
+      soluta vel vero!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut
+      corporis deleniti doloremque et excepturi expedita labore libero, placeat,
+      quaerat rerum ullam vitae voluptate. Accusantium et explicabo qui tenetur
+      unde. Amet aperiam doloremque enim, expedita id illo minima porro quod.
+    </p>
+
+    <!-- Absolute Positioning -->
+    <h1 class="absolute">Absolute Positioning</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+      iusto non optio vel voluptas? Assumenda blanditiis consequatur doloribus
+      porro quasi similique vero voluptatibus. Adipisci, tenetur.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+      commodi consectetur dolore eligendi, esse fuga hic laboriosam nobis
+      nostrum, nulla omnis optio pariatur repellendus reprehenderit saepe, sit
+      soluta vel vero!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut
+      corporis deleniti doloremque et excepturi expedita labore libero, placeat,
+      quaerat rerum ullam vitae voluptate. Accusantium et explicabo qui tenetur
+      unde. Amet aperiam doloremque enim, expedita id illo minima porro quod.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+      aliquid asperiores blanditiis cumque eos ex expedita facilis laborum
+      maiores necessitatibus neque, officiis pariatur porro temporibus unde
+      veritatis vitae? Beatae dolores error ex fugiat molestias neque placeat
+      quod ratione repellat veritatis! A culpa cumque, delectus distinctio
+      ducimus earum et ex quas quia quis tempore temporibus veritatis
+      voluptates. Delectus doloremque mollitia nobis?
+    </p>
+    <!-- Floating -->
+    <div class="container">
+      <img src="https://i.imgur.com/cs2BJzw.jpg" width="200px" alt="dicoding" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+        asperiores commodi corporis doloribus eum ipsum obcaecati pariatur quam
+        quo, voluptatum? A, assumenda atque delectus dolore nam natus neque
+        quisquam repudiandae?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At deserunt
+        illum inventore numquam officia recusandae, sit! Ab asperiores delectus
+        dolor, eius est explicabo impedit ipsa ipsum itaque mollitia neque nihil
+        nisi officia praesentium sint! Accusantium libero obcaecati provident
+        qui? Error!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        debitis dolorem eaque eius eos error eum ex facilis fuga ipsa iste iusto
+        mollitia nam natus necessitatibus praesentium quam qui quod, rerum sed
+        sequi sint voluptates? Atque enim, ex facere fugiat ipsum mollitia quos
+        sunt. At, autem commodi dolorum eos, est expedita, incidunt molestias
+        nobis nostrum officia porro reiciendis saepe voluptatum.
+      </p>
+    </div>
+    <!-- Solusi penerapan float dengan Clear Property -->
+    <div class="container">
+      <img src="https://i.imgur.com/cs2BJzw.jpg" width="200px" alt="dicoding" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        adipisci architecto aspernatur dolorem doloremque eum excepturi fuga
+        hic, molestias obcaecati officia perferendis perspiciatis qui saepe ut
+        velit veniam vitae voluptatum.
+      </p>
+      <div class="clear"></div>
+    </div>
+    <!-- Cara lain bisa menggunakan Overflow -->
+    <div class="container">
+      <img src="https://i.imgur.com/cs2BJzw.jpg" width="200px" alt="dicoding" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        adipisci architecto aspernatur dolorem doloremque eum excepturi fuga
+        hic, molestias obcaecati officia perferendis perspiciatis qui saepe ut
+        velit veniam vitae voluptatum.
+      </p>
+    </div>
+    <!-- Media Query -->
+    <header>
+      <h1>Penggunaan CSS Media Query</h1>
+    </header>
+
+    <main>
+      <div id="mainContent">
+        <h2>Lorem Ipsum</h2>
+
+        <article>
+          <h3>Lorem, ipsum dolor.</h3>
+          <p>
+            Pellentesque venenatis mi sit amet erat tincidunt auctor. Curabitur
+            tincidunt tellus ac convallis dictum. Morbi luctus leo eget leo
+            luctus elementum. Cras at ligula eu elit blandit venenatis.
+          </p>
+        </article>
+        <article>
+          <h3>Lorem, ipsum dolor.</h3>
+          <p>
+            Nullam varius ex quis placerat dapibus. Vestibulum bibendum luctus
+            tincidunt. Proin cursus velit non magna blandit hendrerit.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+            posuere cubilia curae; Cras posuere ac tellus a iaculis.
+          </p>
+        </article>
+        <article>
+          <h3>Lorem, ipsum dolor.</h3>
+          <p>
+            Donec pretium orci quis mauris tristique finibus sed sed felis. Nunc
+            luctus dui et ex hendrerit, et feugiat ex vehicula.
+          </p>
+        </article>
+      </div>
+
+      <aside>
+        <h3>Menu</h3>
+        <ul>
+          <li>
+            <a href="#">Lorem, ipsum.</a>
+          </li>
+          <li>
+            <a href="#">Lorem, ipsum.</a>
+          </li>
+          <li>
+            <a href="#">Lorem, ipsum.</a>
+          </li>
+          <li>
+            <a href="#">Lorem, ipsum.</a>
+          </li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Hak Cipta &copy; 2023</p>
+    </footer>
+  </body>
+</html>
