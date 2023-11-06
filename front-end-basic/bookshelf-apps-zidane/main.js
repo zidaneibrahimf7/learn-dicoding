@@ -17,18 +17,20 @@ document.addEventListener('DOMContentLoaded', function () {
   function addBook() {
     const textBook = document.getElementById('inputBookTitle').value;
     const writerBook = document.getElementById('inputBookAuthor').value;
-    const yearBook = document.getElementById('inputBookYear').value;
+    const yearBook = Number(document.getElementById('inputBookYear').value);
 
     const generatedID = generatedId();
-    const isCompleted = document.getElementById('inputBookIsComplete').checked;
+    const isComplete = document.getElementById('inputBookIsComplete').checked;
 
-    const bookObject = generateBookObject(generatedID, textBook, writerBook, yearBook, isCompleted, false)
+    const bookObject = generateBookObject(generatedID, textBook, writerBook, yearBook, isComplete, false)
 
     // membuat kondisi apabila sudah dibaca dan belum dibaca
-    if (isCompleted) {
+    if (isComplete) {
       completeBookshelfList.push(bookObject);
+      // console.log(completeBookshelfList);
     } else {
       incompleteBookshelfList.push(bookObject);
+      console.log(incompleteBookshelfList)
     }
 
     document.dispatchEvent(new Event(RENDER_EVENT))
@@ -36,13 +38,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  function generateBookObject(id, title, author, year, isCompleted) {
+  function generateBookObject(id, title, author, year, isComplete) {
     return {
       id,
       title,
       author,
       year,
-      isCompleted: isCompleted,
+      isComplete: isComplete,
     };
   }
 
@@ -50,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const bookToMove = incompleteBookshelfList.find(book => book.id == id);
 
     if (bookToMove) {
-      bookToMove.isCompleted = true;
+      bookToMove.isComplete = true;
       incompleteBookshelfList.splice(incompleteBookshelfList.indexOf(bookToMove), 1);
       completeBookshelfList.push(bookToMove);
       document.dispatchEvent(new Event(RENDER_EVENT));
@@ -63,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const bookToMove = completeBookshelfList.find(book => book.id == id);
 
     if (bookToMove) {
-      bookToMove.isCompleted = false;
+      bookToMove.isComplete = false;
       completeBookshelfList.splice(completeBookshelfList.indexOf(bookToMove), 1);
       incompleteBookshelfList.push(bookToMove);
       document.dispatchEvent(new Event(RENDER_EVENT));
@@ -103,9 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // membuat tombol aksi
     const moveButton = document.createElement('button');
-    moveButton.innerText = bookObject.isCompleted ? 'Belum Selesai' : 'Selesai dibaca';
+    moveButton.innerText = bookObject.isComplete ? 'Belum Selesai' : 'Selesai dibaca';
     moveButton.addEventListener('click', function () {
-      if (bookObject.isCompleted) {
+      if (bookObject.isComplete) {
         moveBookToIncomplete(bookObject.id)
       } else {
         moveBookToCompleted(bookObject.id);
@@ -138,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
     incompleteBookshelfList.find(book => book.id === id);
 
     if (bookToRemove) {
-      const shelf = bookToRemove.isCompleted ? completeBookshelfList : incompleteBookshelfList;
+      const shelf = bookToRemove.isComplete ? completeBookshelfList : incompleteBookshelfList;
       const bookIndex = shelf.findIndex(book => book.id === id);
 
       if (bookIndex >= 0) {
@@ -157,14 +159,14 @@ document.addEventListener('DOMContentLoaded', function () {
     completeBookshelfElement.innerHTML = '';
 
     incompleteBookshelfList.forEach(book => {
-      if (book.isCompleted === false) {
+      if (book.isComplete === false) {
         const bookElement = makeBook(book);
         incompleteBookshelfElement.appendChild(bookElement);
       }
     });
 
     completeBookshelfList.forEach(book => {
-      if (book.isCompleted === true) {
+      if (book.isComplete === true) {
         const bookElement = makeBook(book);
         completeBookshelfElement.appendChild(bookElement);
       }
@@ -229,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
       searchResultsElement.innerText = 'Tidak ada buku yang cocok';
     } else {
       results.forEach(book => {
-        const bookInfo = document.createElement('');
+        const bookInfo = document.createElement('section');
         bookInfo.classList.add('search-section');
         bookInfo.innerHTML = `
          <h3>${book.title}</h3>

@@ -25,7 +25,6 @@ let pesanUcapan = ucapan("Harry", "English")
 console.log(pesanUcapan)
 
 // function Parameters
-
 const user = {
   id: 24,
   displayName: 'Michael',
@@ -56,3 +55,58 @@ function sum(...numbers) {
 }
 
 console.log(sum(1, 2, 3, 4, 5));
+
+//Arrow function
+const sayHello = (greet) => {
+  console.log(`${greet}`);
+}
+
+sayHello('Selamat Datang');
+
+const perkalian = (a, b) => {
+  return a * b;
+}
+
+console.log(perkalian(2, 3))
+
+// closure  => fungsi yang bersarang di dalam fungsi
+
+function init() {
+  const name = 'Obi Wan';
+
+  function greet() {
+    console.log(`Hallo, ${name}`);
+  }
+
+  greet();
+}
+
+init()
+
+//menggunakan closure membantu kita untuk membuat seolah2 itu private, krn di dalam js tidak seperti java yg bisa kita buat public dan private
+
+// contoh
+let counter = 0;
+
+const add = () => {
+  return ++counter;
+}
+
+console.log(add())
+console.log(add())
+counter = 23;
+console.log(add()) //ini secara gak langsung akan selalu mengakses function add()
+
+// biar jadi private gimana?
+
+const tambah = () => {
+  let counter = 0;
+  return () => {
+    return ++counter;
+  }
+}
+
+const addCounter = tambah();
+
+console.log(addCounter())
+console.log(addCounter())
