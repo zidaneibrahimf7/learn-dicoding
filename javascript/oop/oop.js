@@ -173,15 +173,24 @@ class MailService {
   sendMessage(message, receiver) {
     console.log(`${this.sender} sent ${message} to ${receiver}`);
   }
+
 }
 
-/// Subclass
+// Subclass
 class WhatsAppService extends MailService {
+  // overriding => memperbolehkan subclass mendefinisikan implementasinya sendiri pada sebuah methods
+  // constructor Overriding
+  // menambahkan isBusiness sebagai properti baru yang lebih spesifik pada subclass WhatsAppService di dalam MailService
+  constructor(sender, isBusiness) {
+    super(sender);
+    this.isBusiness = isBusiness;
+  }
   sendBroadcastMessage(message, receivers) {
     for (const receiver of receivers) {
       this.sendMessage(message, receiver);
     }
   }
+
 }
 
 // Subclass
@@ -203,8 +212,90 @@ const email = new EmailService('dimas@dicoding.com');
 
 whatsapp.sendMessage('Hello', '+6289876543210');
 whatsapp.sendBroadcastMessage('Hello', ['+6289876543210', '+6282234567890']);
-whatsapp.sendDelayedMessage(); // Error
+// whatsapp.sendDelayedMessage(); // Error
 
 email.sendMessage('Hello', 'john@doe.com');
 email.sendDelayedMessage('Hello', 'john@doe.com', 3000);
-email.sendBroadcastMessage(); // Error
+// email.sendBroadcastMessage(); // Error
+
+
+class Developer {
+  constructor(name) {
+    this.name = name;
+  }
+
+  commitChange() {
+    console.log(`${this.name} is committing changess....`);
+  }
+}
+
+// class FrontEndDeveloper extends Developer {
+//   buildUI() {
+//     console.log(`${this.name} is Building UI`);
+//   }
+// }
+
+// class BackEndDeveloper extends Developer {
+//   buildAPI() {
+//     console.log(`${this.name} is Building API`)
+//   }
+// }
+
+// class DevOps extends Developer {
+//   deployApp() {
+//     console.log(`${this.name} is deploying app`)
+//   }
+// }
+
+// cara diatas tidak efektif karena jika terjadi perubahan pada salah satu function. maka dibuatlah object composition
+// object composition adalah mengubah class menjadi function berdasarkan kemampuannya
+
+function canBuildApi(developer) {
+  return {
+    buildAPI: () => {
+      console.log(`${developer.name} is building API...`)
+    }
+  }
+}
+function canBuildUI(developer) {
+  return {
+    buildUI: () => {
+      console.log(`${developer.name} is building UI...`)
+    }
+  }
+}
+function canDeployApp(developer) {
+  return {
+    deployApp: () => {
+      console.log(`${developer.name} is deploying App...`)
+    }
+  }
+}
+
+// dengan dipceah sesuai kemampuan tersebut, maka akan mempermudah cara kita untuk membangun objek apapun dengan peran apapun...
+
+function createBackEndDeveloper(name) {
+  const developer = new Developer(name);
+  return Object.assign(developer, canBuildApi(developer))
+}
+// Object.assign untuk mempermudah fungsi menjadi object creator mengomposisikan objek kemampuan2 yg dibutuhkan..
+
+function createFrontEndDeveloper(name) {
+  const developer = new Developer(name);
+  return Object.assign(developer, canBuildUI(developer))
+}
+
+function createDevOps(name) {
+  const developer = new Developer(name);
+  return Object.assign(developer, canDeployApp(developer))
+}
+
+function createFullstackDeveloper(name) {
+  const developer = new Developer(name);
+  return Object.assign(developer, canBuildApi(developer), canBuildUI(developer), canDeployApp(developer))
+}
+
+const FrontEndDeveloper = createFrontEndDeveloper('Zidane')
+FrontEndDeveloper.commitChange()
+FrontEndDeveloper.buildUI()
+console.log(`is ${FrontEndDeveloper.name} developer?`, FrontEndDeveloper instanceof Developer)

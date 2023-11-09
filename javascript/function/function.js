@@ -1,15 +1,35 @@
+/* Function */
+
+// membuat Fungsi
 function greeting() {
   console.log('Good Morning');
 }
-
+// Memanggil Fungsi
 greeting();
+console.log('----')
+
+// Membuat Function saat melakukan Event
+// 1. Secara terprogramnya
+// function myFunc() { /* ... */}
+// myFunc()
+
+// // 2. Event Terjadi
+// document.addEventListener('click', function() {})
+
+// // 3. Terpanggil otomatis
+// (function() {
+//   console.log*'Function terpanggil otomatis'
+// })();
+
 
 function multiply(a, b) {
   return a * b
 }
-
+// Deklarasi nilai di dalam fungsi
 console.log(multiply(2, 3))
+console.log('----')
 
+// Membuat ekspression dan logic di dalam function
 function ucapan(nama, bahasa) {
   if (bahasa === 'English') {
     console.log(`Good Morning ${nama}`)
@@ -20,7 +40,7 @@ function ucapan(nama, bahasa) {
   }
 }
 
-ucapan("Harry", "French")
+ucapan("Harry", "French") //output : Bounjour Harry
 let pesanUcapan = ucapan("Harry", "English")
 console.log(pesanUcapan)
 
@@ -31,11 +51,12 @@ const user = {
   fullName: "Michael Benedict"
 }
 
+// Memanggil parameter di dalam variabel object dengan emmanggil key nya
 function introduction({ displayName, fullName }) { //dibangun jd object 
   console.log(`${displayName} is ${fullName}`)
 }
 
-introduction(user)
+introduction(user) //memanggil function dan get variabel key nya untuk mendapatkan value di dalam variabel object tersebut;
 
 // Default parameters
 function exponentsFormula(baseNumber, exponent = 2) { //diberikan nilai default exponent = 2
@@ -45,7 +66,7 @@ function exponentsFormula(baseNumber, exponent = 2) { //diberikan nilai default 
 
 exponentsFormula(2, 2)
 
-// Rest parameters
+// Rest parameters => memanggil 
 function sum(...numbers) {
   let result = 0;
   for (let number of numbers) {
